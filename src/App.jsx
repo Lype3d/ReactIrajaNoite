@@ -5,7 +5,12 @@ import NovaTarefa from './components/NovaTarefa'
 import GetAxios from './components/GetAxios'
 import PostAxios from './components/PostAxios'
 import paisagem from './images/andre-alexander-N3V2uhtuDCo-unsplash.jpg'
+import { useEffect } from 'react'
+import BotaoUseEffect from './components/BotaoUseEffect'
 function App() {
+
+    
+
   return (
     <div className="App">
       <div>
@@ -19,7 +24,7 @@ function App() {
       <br />
       <GetAxios/>
       <br />
-      <PostAxios/>
+      <BotaoUseEffect/>
     </div>
   )
 }
