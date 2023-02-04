@@ -3,6 +3,7 @@ import Tarefa from "./Tarefa";
 import { useEffect, useState } from "react";
 function GetAxios() {
   const [tarefas, setTarefas]=useState([])
+  const [ref, setRef] = useState(0)
   useEffect(()=>{
   axios
     .get('https://servidor-notas-4ki9.onrender.com/notas')
@@ -11,13 +12,13 @@ function GetAxios() {
     setTarefas(response.data)
     })
     .catch((error) => { console.error(error) });
-},[])
+},[ref])
   return (
     
     <div>
-      
+      <button onClick={()=>setRef(ref+1)}>Atualizar</button>
     {tarefas.map((element,key)=>(
-    <Tarefa titulo={element.titulo} key={key}/> 
+    <Tarefa tituloTarefa={element.titulo} key={key}/> 
     ))}
      
     </div>
